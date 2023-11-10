@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.ind-active
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: black;
+    margin: 2px;
+}
+.ind
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 2px black solid;
+    margin: 2px;
+}
