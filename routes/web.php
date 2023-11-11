@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Livewire\Page;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', \App\Livewire\MainPage::class);
-Route::get('/test/{id}', \App\Livewire\Test::class);
+Route::get('/test/{id}', Page::class);
 
 
 require __DIR__.'/auth.php';

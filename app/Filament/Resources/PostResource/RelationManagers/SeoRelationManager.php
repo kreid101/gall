@@ -18,7 +18,9 @@ class SeoRelationManager extends RelationManager
     {
         return $form
             ->schema([
-
+                Forms\Components\TextInput::make('post_title'),
+                Forms\Components\TextInput::make('post_description'),
+                Forms\Components\TextInput::make('hashtags'),
             ]);
     }
 

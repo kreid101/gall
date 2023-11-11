@@ -29,6 +29,6 @@ class Post extends Model
     }
     public function seo()
     {
-        return $this->hasOne(PostInfo::class,'post_id','id');
+        return $this->hasOne(PostSeo::class,'post_id','id');
     }
 }

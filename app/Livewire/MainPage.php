@@ -6,10 +6,11 @@ use App\Models\Post;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
-#[Title('Create Post')]
+#[Title('NUIMG | MAIN')]
 class MainPage extends Component
 {
     public $pcnt=2;
+
     public function loadMore()
     {
         $this->pcnt+=1;
@@ -17,6 +18,6 @@ class MainPage extends Component
 
     public function render()
     {
-        return view('livewire.main-page',[ 'posts' => Post::orderBy('created_at','desc')->paginate($this->pcnt),]);
+        return view('livewire.main-page',[ 'posts' => Post::orderBy('created_at','desc')->paginate($this->pcnt)]);
     }
 }
