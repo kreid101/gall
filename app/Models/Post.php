@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\PostDeleted;
 use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,6 +15,9 @@ class Post extends Model
         'published' => 'boolean',
     ];
     protected $with=['images','info'];
+    protected $dispatchesEvents = [
+        'deleted' => PostDeleted::class,
+    ];
     protected static function newFactory():PostFactory
     {
         return PostFactory::new();
