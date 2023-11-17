@@ -24,8 +24,8 @@ class DeletePostImages
 
         foreach ($event->post->images as $img)
         {
-            Storage::delete('public/'.$img->img_path);
-            Storage::delete('public/'.$img->img_preview);
+            Storage::disk('yandexcloud')->delete($img->img_path);
+            Storage::disk('yandexcloud')->delete($img->img_preview);
         }
     }
 }

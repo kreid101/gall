@@ -68,7 +68,7 @@
           @mousedown="dragging(event,$el)"
           :style="{transform: 'translateX(' + transx + 'px)'}">
         @foreach($this->images as $key=>$img)
-            <img draggable="false" src="/storage/{{$img->img_preview}}" id="image-{{$key}}" alt="">
+            <img draggable="false" src="{{env('YANDEX_URL').$img->img_preview}}" id="image-{{$key}}" alt="">
         @endforeach
 
     </div>

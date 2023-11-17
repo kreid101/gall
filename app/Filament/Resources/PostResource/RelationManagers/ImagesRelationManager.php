@@ -19,8 +19,8 @@ class ImagesRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('img_path') ->preserveFilenames(),
-                Forms\Components\FileUpload::make('img_preview')->getUploadedFileNameForStorageUsing(
+                Forms\Components\FileUpload::make('img_path')->disk('yandexcloud')->preserveFilenames(),
+                Forms\Components\FileUpload::make('img_preview')->disk('yandexcloud')->getUploadedFileNameForStorageUsing(
                     fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
                         ->prepend('preview-'),
                 )->image()

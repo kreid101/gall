@@ -18,6 +18,6 @@ class MainPage extends Component
 
     public function render()
     {
-        return view('livewire.main-page',[ 'posts' => Post::orderBy('created_at','desc')->paginate($this->pcnt)]);
+        return view('livewire.main-page',[ 'posts' => Post::where('published','=',true)->orderBy('created_at','desc')->paginate($this->pcnt)]);
     }
 }
