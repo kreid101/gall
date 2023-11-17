@@ -61,11 +61,11 @@
         this.clickp - event.x <= -100 && this.prev_index > -1 ? this.toprev() :  this.clickp - event.x >= 100 && this.next_index < this.imgl ? this.tonext() : this.tocur()
     }
 
-}" class="relative overflow-hidden w-full min-h-[350px]" x-intersect.once="$wire.setImages()">
+}" class="relative overflow-hidden w-full xl:min-h-[350px]" x-intersect.once="$wire.setImages()">
 
     <div x-ref="img_slider" class="flex w-full group slider gap-4"
-         @mouseover="showbtn=true" @mouseleave="tocur()"
-          @mousedown="dragging(event,$el)"
+         @pointerdown="dragging(event)"
+         @pointerup="tocur()"
           :style="{transform: 'translateX(' + transx + 'px)'}">
         @foreach($this->images as $key=>$img)
             <img draggable="false" src="{{env('YANDEX_URL').$img->img_preview}}" id="image-{{$key}}" alt="">
