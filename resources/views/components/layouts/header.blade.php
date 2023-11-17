@@ -5,6 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="yandex-verification" content="27480f8f450a31ee" />
+
     <title>{{ $title ?? 'NUIMG' }}</title>
     <meta name="description" content="" />
     @livewireStyles
