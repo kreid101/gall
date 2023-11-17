@@ -14,10 +14,8 @@
    next_index:1,
    wipegap:100,
     init(){
-        s=Hammer($refs.img_slider)
-        s.on('swipeleft',()=>{console.log(123)})
-        s.on('swiperight',()=>{console.log(333)})
-        console.log(s)
+
+
     },
     images: [{'img_preview': '/spinner.gif'}],
     tonext(){
@@ -51,16 +49,17 @@
     func:null,
     stdrag:null,
     dragging(event,elem){
+    console.log(event.x)
        this.stpoint=event.x-this.transx
        this.clickp=event.x
        this.func=this.spec.bind(this)
        this.stdrag=this.stopDrag.bind(this)
-       window.addEventListener('mousemove',this.func)
-       window.addEventListener('mouseup',this.stdrag)
+       window.addEventListener('pointermove',this.func)
+       window.addEventListener('pointerup',this.stdrag)
     },
     stopDrag(event,elem){
-        window.removeEventListener('mousemove',this.func)
-        window.removeEventListener('mouseup',this.stdrag)
+        window.removeEventListener('pointermove',this.func)
+        window.removeEventListener('pointerup',this.stdrag)
 
         $refs.img_slider.style.transition='all 0.5s'
 
