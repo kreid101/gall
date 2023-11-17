@@ -4,6 +4,7 @@
    transx:0,
    clickp:0,
    indw:24,
+   hamer:null,
    imgl:@js(count($img)),
    index:0,
    basew:$refs.img_slider.getBoundingClientRect().width+16,
@@ -12,7 +13,12 @@
    current_index:0,
    next_index:1,
    wipegap:100,
-
+    init(){
+        s=Hammer($refs.img_slider)
+        s.on('swipeleft',()=>{console.log(123)})
+        s.on('swiperight',()=>{console.log(333)})
+        console.log(s)
+    },
     images: [{'img_preview': '/spinner.gif'}],
     tonext(){
 
