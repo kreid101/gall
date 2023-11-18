@@ -7,15 +7,14 @@
    hamer:null,
    imgl:@js(count($img)),
    index:0,
-   basew:$refs.img_slider.getBoundingClientRect().width+16,
+   basew:0,
    showbtn:false,
    prev_index:-1,
    current_index:0,
    next_index:1,
    wipegap:100,
     init(){
-
-
+        this.basew=$refs.img_slider.getBoundingClientRect().width+16
     },
     images: [{'img_preview': '/spinner.gif'}],
     tonext(){
