@@ -7,7 +7,9 @@
     @foreach($posts as $post)
         <livewire:post wire:key="{{ $post->id }}" :post="$post" ></livewire:post>
     @endforeach
+    @if($posts->perPage() < $posts->total())
         <button x-intersect="$wire.loadMore" wire:click="loadMore">load more</button>
-</div>
+        @endif
 
+</div>
 </div>

@@ -9,7 +9,8 @@ use Livewire\Attributes\Title;
 #[Title('NUIMG | MAIN')]
 class MainPage extends Component
 {
-    public $pcnt=2;
+    public $pcnt=1;
+
 
     public function loadMore()
     {
