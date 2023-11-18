@@ -46,31 +46,49 @@
        this.transx=event.x-this.stpoint
 
     },
+    tdrag(event)
+    {
+        this.transx=event.touches[0].clientX-this.stpoint
+    },
     func:null,
     stdrag:null,
     dragging(event,elem){
-    console.log(event.x)
        this.stpoint=event.x-this.transx
        this.clickp=event.x
        this.func=this.spec.bind(this)
        this.stdrag=this.stopDrag.bind(this)
-       window.addEventListener('pointermove',this.func)
-       window.addEventListener('pointerup',this.stdrag)
+       window.addEventListener('mousemove',this.func)
+       window.addEventListener('mouseup',this.stdrag)
     },
     stopDrag(event,elem){
-        window.removeEventListener('pointermove',this.func)
-        window.removeEventListener('pointerup',this.stdrag)
-
+        window.removeEventListener('mousemove',this.func)
+        window.removeEventListener('mouseup',this.stdrag)
         $refs.img_slider.style.transition='all 0.5s'
-
         this.clickp - event.x <= -100 && this.prev_index > -1 ? this.toprev() :  this.clickp - event.x >= 100 && this.next_index < this.imgl ? this.tonext() : this.tocur()
+    },
+    tstop(event){
+        window.removeEventListener('touchmove',this.func)
+        window.removeEventListener('touchend',this.stdrag)
+        $refs.img_slider.style.transition='all 0.5s'
+        this.clickp - event.changedTouches[0].clientX <= -100 && this.prev_index > -1 ? this.toprev() :  this.clickp - event.changedTouches[0].clientX >= 100 && this.next_index < this.imgl ? this.tonext() : this.tocur()
+    },
+    tch(event)
+    {
+       this.stpoint=event.touches[0].clientX-this.transx
+       this.clickp=event.touches[0].clientX
+       this.func=this.tdrag.bind(this)
+       this.stdrag=this.tstop.bind(this)
+       window.addEventListener('touchmove',this.func)
+       window.addEventListener('touchend',this.stdrag)
+
     }
 
 }" class="relative overflow-hidden w-full xl:min-h-[350px]" x-intersect.once="$wire.setImages()">
 
     <div x-ref="img_slider" class="flex w-full group slider gap-4"
-         @pointerdown="dragging(event)"
-         @pointerup="tocur()"
+         @mousedown="dragging(event)"
+         @mouseup="tocur()"
+         @touchstart="tch(event)"
           :style="{transform: 'translateX(' + transx + 'px)'}">
         @foreach($this->images as $key=>$img)
             <img draggable="false" src="{{env('YANDEX_URL').$img->img_preview}}" id="image-{{$key}}" alt="">

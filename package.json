@@ -16,9 +16,6 @@
     },
     "dependencies": {
         "@alpinejs/intersect": "^3.13.1",
-        "alpinejs-swipe": "^1.0.2",
-        "flowbite": "^1.8.1",
-        "hammerjs": "^2.0.8",
-        "swiper": "^11.0.3"
+        "flowbite": "^1.8.1"
     }
 }
