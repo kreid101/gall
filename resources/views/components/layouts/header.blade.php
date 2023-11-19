@@ -17,7 +17,7 @@
     @vite(['resources/js/app.js'])
 
 </head>
-<body class="bg-cosmo">
+<body class="bg-cosmo overflow-y-scroll">
 
 {{$slot}}
 
