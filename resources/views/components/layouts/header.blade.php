@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
 
     <title>{{ $title ?? 'NUIMG' }}</title>
-    <meta name="description" content="" />
+    <meta name="description" content="Indulge in the timeless elegance and diverse beauty of our curated photo gallery showcasing captivating images of women. Explore a collection that celebrates the strength, grace, and individuality of women across cultures and moments in time. From empowering portraits to candid moments that capture the essence of femininity, our site offers a visual journey that resonates with authenticity and appreciation. Immerse yourself in a world where each image tells a unique story, inviting you to embrace the multifaceted tapestry of womanhood. Elevate your visual experience with our carefully selected and thoughtfully presented images that redefine the art of capturing the spirit of women in all their splendor." />
     @livewireStyles
     @vite(['resources/js/app.js'])
 
