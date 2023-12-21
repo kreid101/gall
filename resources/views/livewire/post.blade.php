@@ -1,4 +1,4 @@
-<div  x-data="post" class="items-center bg-white flex flex-col border-2 w-3/4 px-4 rounded hover:bg-gray-50" >
+<div  x-data="post" class="items-center bg-white flex flex-col border-2 w-3/4 px-4 rounded hover:bg-gray-50 max-w-4xl" >
     <h1 class="text-4xl m-4">{{$post->title}}</h1>
     <div class="self-start text-lg">{{__('PH:')}} <a class="hover:underline" target="_blank" href="{{$post->info->ph_link ?? null}}">{{$post->info->ph_name ?? 'unknown'}}</a> </div>
     <div class="self-start text-lg mb-4">{{__('Model:')}} <a class="hover:underline" target="_blank" href="{{$post->info->model_link ?? null}}">{{$post->info->model_name ?? 'unknown'}}</a></div>
